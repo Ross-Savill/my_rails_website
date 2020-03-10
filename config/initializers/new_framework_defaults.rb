@@ -21,7 +21,7 @@ Rails.application.config.active_record.belongs_to_required_by_default = true
 
 # Do not halt callback chains when a callback returns false. Previous versions had true.
 # ActiveSupport.halt_callback_chains_on_return_false = false
-# ABOVE LINE GREYED OUT BY ME
+# ABOVE LINE GREYED OUT BY ME AS IT WAS STOPPING ACTIVESTORAGE ADDITION
 
 # Configure SSL options to enable HSTS with subdomains. Previous versions had false.
 Rails.application.config.ssl_options = { hsts: { subdomains: true } }
