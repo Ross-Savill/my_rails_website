@@ -1,5 +1,6 @@
 class QualificationsController < ApplicationController
   def new
+    @qualification = Qualification.new
   end
 
   def create

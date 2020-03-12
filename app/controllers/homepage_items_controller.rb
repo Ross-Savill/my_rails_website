@@ -1,5 +1,6 @@
 class HomepageItemsController < ApplicationController
   def index
+    @homepage_data = HomePage.first
   end
 
   def new
