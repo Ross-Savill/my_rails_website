@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.grid_container {
+  display: grid;
+  grid-template-areas:
+  'header header header'
+  'left_column center_column right_column'
+  'left_column center_column right_column'
+  'left_column center_column right_column';
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
 .title {
+  grid-area: header;
   text-align: center;
+}
+
+.about_me {
+  grid-area: left_column;
 }
