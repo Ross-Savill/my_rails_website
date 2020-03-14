@@ -1,5 +1,41 @@
 <div class="grid_container">
-  <h1 class="title"> <%= @homepage_data.title %> <h1>
-  <h2 class="about_me"> <%= @homepage_data.about_me %> <h2>
+  <div class="titlediv">
+    <h1 class="title">
+      <%= @homepage_data.title %>
+    <h1>
+  </div>
+  <div class="aboutmediv">
+    <h2 class="about_me">
+      <%= @homepage_data.about_me %>
+    <h2>
+  </div>
+  <div class="qualificationdiv">
+    <h2 class="qualifications">
+      <table class="qualification_table">
+        <tr>
+          <th>Topic</th>
+          <th>Level</th>
+          <th>Grade</th>
+        </tr>
+        <tr>
+      <% Qualification.all.each do |qualification| %>
+        <td><%= qualification.topic %></td>
+        <td><%= qualification.level %></td>
+        <td><%= qualification.grade %></td>
+        </tr>
+      <% end %>
+      </table>
+    </h2>
+  </div>
+  <div class="workdiv">
+    <h2 class="work">
+      <% Work.all.each do |job| %>
+        <%= job.organisation %>
+        <%= job.years %>
+        <%= job.role %>
+        <%= job.tasks %>
+      <% end %>
+    </h2>
+  </div>
 </div>
 

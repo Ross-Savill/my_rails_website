@@ -4,20 +4,35 @@
 
 .grid_container {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
   'header header header'
-  'left_column center_column right_column'
   'left_column center_column right_column'
   'left_column center_column right_column';
   column-gap: 20px;
   row-gap: 20px;
 }
 
-.title {
+.titlediv {
   grid-area: header;
   text-align: center;
 }
 
-.about_me {
+.aboutmediv {
   grid-area: left_column;
+  outline-color: red;
 }
+
+.qualificationdiv {
+  grid-area: center_column;
+}
+
+.qualification_table, th, td {
+    border: 1px solid black;
+}
+
+.workdiv {
+  grid-area: right_column;
+}
+
