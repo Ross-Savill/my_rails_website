@@ -28,11 +28,31 @@
   grid-area: center_column;
 }
 
-.qualification_table, th, td {
+.qualification_table {
     border: 1px solid black;
+}
+
+.qualification_table th {
+  border: 1px solid black;
+}
+
+.qualification_table td {
+  border: 1px solid black;
 }
 
 .workdiv {
   grid-area: right_column;
+}
+
+.work_table {
+  border: 1px solid red;
+}
+
+.work_table th {
+  border: 1px solid red;
+}
+
+.work_table td {
+  border: 1px solid red;
 }
 

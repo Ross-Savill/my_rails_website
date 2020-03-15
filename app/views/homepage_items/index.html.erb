@@ -18,23 +18,33 @@
           <th>Grade</th>
         </tr>
         <tr>
-      <% Qualification.all.each do |qualification| %>
-        <td><%= qualification.topic %></td>
-        <td><%= qualification.level %></td>
-        <td><%= qualification.grade %></td>
+          <% Qualification.all.each do |qualification| %>
+            <td><%= qualification.topic %></td>
+            <td><%= qualification.level %></td>
+            <td><%= qualification.grade %></td>
+          <% end %>
         </tr>
-      <% end %>
       </table>
     </h2>
   </div>
   <div class="workdiv">
     <h2 class="work">
-      <% Work.all.each do |job| %>
-        <%= job.organisation %>
-        <%= job.years %>
-        <%= job.role %>
-        <%= job.tasks %>
-      <% end %>
+      <table class="work_table">
+        <tr>
+          <th>Organisation</th>
+          <th>Years</th>
+          <th>Role</th>
+          <th>Tasks</th>
+        </tr>
+        <tr>
+          <% Work.all.each do |job| %>
+            <td><%= job.organisation %></td>
+            <td><%= job.years %></td>
+            <td><%= job.role %></td>
+            <td><%= job.tasks %></td>
+          <% end %>
+        </tr>
+      </table>
     </h2>
   </div>
 </div>

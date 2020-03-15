@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admins
   resources :blogs, :works, :qualifications
   resources :homepage_items, only: [:edit, :update, :index]
   root 'homepage_items#index'
