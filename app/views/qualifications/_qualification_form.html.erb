@@ -1,0 +1,32 @@
+<%= form_with(model: qualification, local: true) do |form| %>
+  <% if qualification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qualification.errors.count, "error") %> prohibited this qualification from being saved:</h2>
+      <ul>
+      <% qualification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="topic">
+    <%= form.label :topic %>
+    <%= form.text_field :topic %>
+  </div>
+
+  <div class="level">
+    <%= form.label :level %>
+    <%= form.text_field :level %>
+  </div>
+
+  <div class="grade">
+    <%= form.label :grade %>
+    <%= form.text_area :grade %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>

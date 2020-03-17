@@ -23,38 +23,51 @@
   <div class="qualificationdiv">
     <h2 class="qualifications">
       <table class="qualification_table">
-        <tr>
-          <th>Topic</th>
-          <th>Level</th>
-          <th>Grade</th>
-        </tr>
-        <tr>
-          <% Qualification.all.each do |qualification| %>
-            <td><%= qualification.topic %></td>
-            <td><%= qualification.level %></td>
-            <td><%= qualification.grade %></td>
-          <% end %>
-        </tr>
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Level</th>
+            <th>Grade</th>
+          </tr>
+        <thead>
+        <tbody>
+          <tr>
+            <% Qualification.all.each do |qualification| %>
+              <td><%= qualification.topic %></td>
+              <td><%= qualification.level %></td>
+              <td><%= qualification.grade %></td>
+            <% end %>
+          </tr>
+        </tbody>
       </table>
     </h2>
+    <% if current_user %>
+      <div class="newQualificationButton">
+        <%= link_to "New Qualification", new_qualification_path %>
+      </div>
+    <% end %>
   </div>
   <div class="workdiv">
     <h2 class="work">
       <table class="work_table">
-        <tr>
-          <th>Organisation</th>
-          <th>Years</th>
-          <th>Role</th>
-          <th>Tasks</th>
-        </tr>
-        <tr>
-          <% Work.all.each do |job| %>
-            <td><%= job.organisation %></td>
-            <td><%= job.years %></td>
-            <td><%= job.role %></td>
-            <td><%= job.tasks %></td>
-          <% end %>
-        </tr>
+        <thead>
+          <tr>
+            <th>Organisation</th>
+            <th>Years</th>
+            <th>Role</th>
+            <th>Tasks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% Work.all.each do |job| %>
+              <td><%= job.organisation %></td>
+              <td><%= job.years %></td>
+              <td><%= job.role %></td>
+              <td><%= job.tasks %></td>
+            <% end %>
+          </tr>
+        </tbody>
       </table>
     </h2>
   </div>

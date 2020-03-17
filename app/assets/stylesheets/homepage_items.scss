@@ -33,6 +33,10 @@ grid-area: footer
   grid-area: center_column;
 }
 
+.workdiv {
+  grid-area: right_column;
+}
+
 .qualification_table {
     border: 1px solid black;
     margin-left: auto;
@@ -46,10 +50,6 @@ grid-area: footer
 .qualification_table td {
   border: 1px solid black;
   text-align: center;
-}
-
-.workdiv {
-  grid-area: right_column;
 }
 
 .work_table {
