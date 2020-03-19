@@ -31,13 +31,13 @@
           </tr>
         <thead>
         <tbody>
-          <tr>
-            <% Qualification.all.each do |qualification| %>
+          <% Qualification.all.each do |qualification| %>
+            <tr>
               <td><%= qualification.topic %></td>
               <td><%= qualification.level %></td>
               <td><%= qualification.grade %></td>
-            <% end %>
-          </tr>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </h2>
@@ -59,17 +59,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <% Work.all.each do |job| %>
+          <% Work.all.each do |job| %>
+            <tr>
               <td><%= job.organisation %></td>
               <td><%= job.years %></td>
               <td><%= job.role %></td>
               <td><%= job.tasks %></td>
-            <% end %>
-          </tr>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </h2>
   </div>
 </div>
-
