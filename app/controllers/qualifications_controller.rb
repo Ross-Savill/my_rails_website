@@ -15,7 +15,6 @@ class QualificationsController < ApplicationController
         format.json { render json: @qualification.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   def edit

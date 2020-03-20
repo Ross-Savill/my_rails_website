@@ -70,5 +70,10 @@
         </tbody>
       </table>
     </h2>
+        <% if current_user %>
+      <div class="newWorkButton">
+        <%= link_to "New Work", new_work_path %>
+      </div>
+    <% end %>
   </div>
 </div>
