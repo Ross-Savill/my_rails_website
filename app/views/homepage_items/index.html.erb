@@ -36,6 +36,11 @@
               <td><%= qualification.topic %></td>
               <td><%= qualification.level %></td>
               <td><%= qualification.grade %></td>
+              <% if current_user %>
+                <div class="editQualificationButton">
+                <%= link_to "Edit Qualification", edit_qualification_path(@qualification) %>
+                </div>
+              <% end %>
             </tr>
           <% end %>
         </tbody>
