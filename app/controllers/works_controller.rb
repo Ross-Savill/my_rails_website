@@ -1,4 +1,6 @@
 class WorksController < ApplicationController
+  before_action :set_product, only: [:edit, :update, :destroy]
+
   def new
     @work = Work.new
   end
@@ -23,10 +25,14 @@ class WorksController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
   private
+
+  def set_product
+    @work = Work.find(params[:id])
+  end
 
   def work_params
     params.require(:work).permit(:organisation, :role, :years, :tasks)

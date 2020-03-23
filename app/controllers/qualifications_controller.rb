@@ -1,4 +1,7 @@
 class QualificationsController < ApplicationController
+  before_action :set_product, only: [:edit, :update, :destroy]
+
+
   def new
     @qualification = Qualification.new
   end
@@ -9,7 +12,7 @@ class QualificationsController < ApplicationController
     respond_to do |format|
       if @qualification.save
         format.html { redirect_to root_path, notice: 'Qualification was successfully created.' }
-        format.json { render :show, status: :created, location: @qualification }
+        format.json { render :index, status: :created, location: @qualification }
       else
         format.html { render :new }
         format.json { render json: @qualification.errors, status: :unprocessable_entity }
@@ -18,15 +21,29 @@ class QualificationsController < ApplicationController
   end
 
   def edit
+    @qualification = Qualification.find(params[:id])
   end
 
   def update
+    respond_to do |format|
+      if @qualification.update(qualification_params)
+        format.html { redirect_to root_path, notice: 'Qualification was successfully updated.' }
+        format.json { render :index, status: :ok, location: @qualification }
+      else
+        format.html { render :edit }
+        format.json { render json: @qualification.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
-  def delete
+  def destroy
   end
 
 private
+
+def set_product
+  @qualification = Qualification.find(params[:id])
+end
 
 def qualification_params
   params.require(:qualification).permit(:topic, :level, :grade)
