@@ -66,6 +66,11 @@
             <th>Years</th>
             <th>Role</th>
             <th>Tasks</th>
+            <% if current_user %>
+              <div class="editJobHeader">
+                <th>Edit</th>
+              </div>
+            <% end %>
           </tr>
         </thead>
         <tbody>
@@ -75,13 +80,18 @@
               <td><%= job.years %></td>
               <td><%= job.role %></td>
               <td><%= job.tasks %></td>
+              <% if current_user %>
+                <div class="editJobButton">
+                  <td><%= link_to "Edit Job", edit_work_path(job) %></td>
+                </div>
+              <% end %>
             </tr>
           <% end %>
         </tbody>
       </table>
     </h2>
         <% if current_user %>
-      <div class="newWorkButton">
+          <div class="newWorkButton">
         <%= link_to "New Work", new_work_path %>
       </div>
     <% end %>
