@@ -31,6 +31,7 @@
             <% if current_user %>
               <div class="editQualificationHeader">
                 <th>Edit</th>
+                <th>Delete</th>
               </div>
             <% end %>
           </tr>
@@ -44,6 +45,7 @@
               <% if current_user %>
                 <div class="editQualificationButton">
                 <td><%= link_to "Edit Qualification", edit_qualification_path(qualification) %></td>
+                <td><%= link_to 'Delete', qualification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </div>
               <% end %>
             </tr>
@@ -69,6 +71,7 @@
             <% if current_user %>
               <div class="editJobHeader">
                 <th>Edit</th>
+                <th>Delete</th>
               </div>
             <% end %>
           </tr>
@@ -83,6 +86,7 @@
               <% if current_user %>
                 <div class="editJobButton">
                   <td><%= link_to "Edit Job", edit_work_path(job) %></td>
+                  <td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </div>
               <% end %>
             </tr>

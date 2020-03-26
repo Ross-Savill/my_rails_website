@@ -37,6 +37,11 @@ class WorksController < ApplicationController
   end
 
   def destroy
+    @work.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Job was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
