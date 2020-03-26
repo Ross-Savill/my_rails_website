@@ -20,9 +20,20 @@ class WorksController < ApplicationController
   end
 
   def edit
+    @work = Work.find(params[:id])
+
   end
 
   def update
+    respond_to do |format|
+      if @work.update(work_params)
+        format.html { redirect_to root_path, notice: 'Job was successfully updated.' }
+        format.json { render :index, status: :ok, location: @job }
+      else
+        format.html { render :edit }
+        format.json { render json: @job.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
