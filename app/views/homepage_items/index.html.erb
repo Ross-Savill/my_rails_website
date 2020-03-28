@@ -19,6 +19,9 @@
     <h2 class="about_me">
       <%= @homepage_data.about_me %>
     <h2>
+    <% if current_user %>
+    <td><%= link_to "Edit About Me", edit_home_page_path %></td>
+    <% end %>
   </div>
   <div class="qualificationdiv">
     <h2 class="qualifications">
