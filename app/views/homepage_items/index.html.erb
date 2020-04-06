@@ -12,15 +12,15 @@
 
   <div class="titlediv">
     <h1 class="title">
-      <%= @homepage_data.title %>
+      <%= @homepage_dataset.title %>
     <h1>
   </div>
   <div class="aboutmediv">
     <h2 class="about_me">
-      <%= @homepage_data.about_me %>
+      <%= @homepage_dataset.about_me %>
     <h2>
     <% if current_user %>
-    <td><%= link_to "Edit About Me", edit_home_page_path %></td>
+    <td><%= link_to "Edit About Me", edit_homepage_item_path(@homepage_dataset) %></td>
     <% end %>
   </div>
   <div class="qualificationdiv">
