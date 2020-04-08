@@ -1,5 +1,5 @@
 class QualificationsController < ApplicationController
-  before_action :set_product, only: [:edit, :update, :destroy]
+  before_action :set_qualification, only: [:edit, :update, :destroy]
 
 
   def new
@@ -46,7 +46,7 @@ class QualificationsController < ApplicationController
 
 private
 
-def set_product
+def set_qualification
   @qualification = Qualification.find(params[:id])
 end
 

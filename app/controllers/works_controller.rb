@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :set_product, only: [:edit, :update, :destroy]
+  before_action :set_work, only: [:edit, :update, :destroy]
 
   def new
     @work = Work.new
@@ -46,7 +46,7 @@ class WorksController < ApplicationController
 
   private
 
-  def set_product
+  def set_work
     @work = Work.find(params[:id])
   end
 

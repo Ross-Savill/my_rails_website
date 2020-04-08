@@ -1,0 +1,27 @@
+<%= form_with(model: homepage_dataset, local: true) do |form| %>
+  <% if @homepage_data.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(homepage_dataset.errors.count, "error") %> prohibited the homepage from being saved:</h2>
+      <ul>
+      <% homepage_dataset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="about_me">
+    <%= form.label :about_me %>
+    <%= form.text_area :about_me %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
