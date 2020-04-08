@@ -1,5 +1,5 @@
-<%= form_with(model: homepage_dataset, local: true) do |form| %>
-  <% if @homepage_data.errors.any? %>
+<%= form_with(model: homepage_dataset, url: homepage_item_path, local: true) do |form| %>
+  <% if homepage_dataset.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(homepage_dataset.errors.count, "error") %> prohibited the homepage from being saved:</h2>
       <ul>

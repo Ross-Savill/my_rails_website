@@ -19,12 +19,12 @@ class HomepageItemsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @homepage_data.update(homepage_data_params)
+      if @homepage_dataset.update(homepage_dataset_params)
         format.html { redirect_to root_path, notice: 'Homepage was successfully updated.' }
-        format.json { render :index, status: :ok, location: @homepage_data }
+        format.json { render :index, status: :ok, location: @homepage_dataset }
       else
         format.html { render :edit }
-        format.json { render json: @homepage_data.errors, status: :unprocessable_entity }
+        format.json { render json: @homepage_dataset.errors, status: :unprocessable_entity }
       end
     end
   end
