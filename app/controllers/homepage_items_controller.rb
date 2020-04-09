@@ -19,7 +19,7 @@ class HomepageItemsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @homepage_dataset.update(homepage_dataset_params)
+      if @homepage_dataset.update(homepage_params)
         format.html { redirect_to root_path, notice: 'Homepage was successfully updated.' }
         format.json { render :index, status: :ok, location: @homepage_dataset }
       else
@@ -32,7 +32,14 @@ class HomepageItemsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_homepage_items
-    @homepage_data = HomePage.first
+    @homepage_dataset = HomePage.first
+  end
+
+  def homepage_params
+    params.require(:home_page).permit(:title, :about_me)
+
+    result =  params.require(:home_page).permit(:title, :about_me)
+    result
   end
 
 end
